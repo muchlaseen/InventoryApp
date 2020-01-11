@@ -9,9 +9,9 @@ package model;
  *
  * @author muchlas
  */
-public enum EmploymentCategory {
-    employed,
-    selfEmployed,
-    unEmployed,
+public enum DepartmentCategory {
+    softwareEngineer,
+    networkEngineer,
+    administrator,
     other
 }

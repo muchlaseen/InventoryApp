@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 import model.StatusCategory;
 import model.Database;
-import model.EmploymentCategory;
+import model.DepartmentCategory;
 import model.Gender;
 import model.Person;
 import ui.FormEvent;
@@ -22,7 +22,7 @@ import ui.FormEvent;
 public class Controller {
 
     Database db = new Database();
-    
+
     public List<Person> getPeople() {
         return db.getPeople();
     }
@@ -50,37 +50,36 @@ public class Controller {
             default:
         }
 
-        EmploymentCategory empCategory;
-        if (empCat.equals("empliyed")) {
-            empCategory = EmploymentCategory.employed;
-        } else if (empCat.equals("self-employed")) {
-            empCategory = EmploymentCategory.selfEmployed;
-        } else if (empCat.equals("unemployed")) {
-            empCategory = EmploymentCategory.unEmployed;
+        DepartmentCategory deptCategory;
+        if (empCat.equals("Software Engineer")) {
+            deptCategory = DepartmentCategory.softwareEngineer;
+        } else if (empCat.equals("Network Engineer")) {
+            deptCategory = DepartmentCategory.networkEngineer;
+        } else if (empCat.equals("Administrator")) {
+            deptCategory = DepartmentCategory.administrator;
         } else {
-            empCategory = EmploymentCategory.other;
+            deptCategory = DepartmentCategory.other;
             System.err.println(empCat);
         }
-        
+
         Gender genderCat;
         if (gender.equals("Male")) {
             genderCat = Gender.male;
-        }
-        else {
+        } else {
             genderCat = Gender.female;
         }
-                
-        Person person = new Person(name, occupation, statusCategory, empCategory, taxId, isUs, genderCat);
+
+        Person person = new Person(name, occupation, statusCategory, deptCategory, taxId, isUs, genderCat);
 
         db.addPerson(person);
 
     }
-    
+
     public void saveToFile(File file) throws IOException {
         db.saveToFile(file);
     }
-    
-    public void openFromFile (File file) throws IOException {
+
+    public void openFromFile(File file) throws IOException {
         db.openFromFile(file);
     }
 }

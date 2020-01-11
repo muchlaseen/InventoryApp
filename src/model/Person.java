@@ -19,17 +19,17 @@ public class Person implements Serializable {
     private String name;
     private String age;
     private StatusCategory statusCategory;
-    private EmploymentCategory empCategory;
+    private DepartmentCategory deptCategory;
     private String taxId;
     private Gender gender;
 
     public Person(String name, String age, StatusCategory statusCategory,
-            EmploymentCategory employmentCategory, String taxId,
+            DepartmentCategory deptCategory, String taxId,
             boolean usCitizen, Gender gender) {
         this.name = name;
         this.age = age;
         this.statusCategory = statusCategory;
-        this.empCategory = employmentCategory;
+        this.deptCategory = deptCategory;
         this.taxId = taxId;
         this.gender = gender;
         
@@ -69,12 +69,12 @@ public class Person implements Serializable {
         this.statusCategory = statusCategory;
     }
 
-    public EmploymentCategory getEmpCategory() {
-        return empCategory;
+    public DepartmentCategory getDeptCategory() {
+        return deptCategory;
     }
 
-    public void setEmpCategory(EmploymentCategory empCategory) {
-        this.empCategory = empCategory;
+    public void setDeptCategory(DepartmentCategory deptCategory) {
+        this.deptCategory = deptCategory;
     }
 
     public String getTaxId() {

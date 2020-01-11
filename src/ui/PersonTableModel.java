@@ -55,7 +55,7 @@ public class PersonTableModel extends AbstractTableModel {
             case 3:
                 return person.getStatusCategory();
             case 4:
-                return person.getEmpCategory();
+                return person.getDeptCategory();
 //            case 5:
 //                return person.isUsCitizen();
             case 5:
