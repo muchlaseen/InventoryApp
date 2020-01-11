@@ -8,7 +8,7 @@ package controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import model.AgeCategory;
+import model.StatusCategory;
 import model.Database;
 import model.EmploymentCategory;
 import model.Gender;
@@ -29,23 +29,23 @@ public class Controller {
 
     public void addPerson(FormEvent ev) {
         String name = ev.getName();
-        String occupation = ev.getOccupation();
+        String occupation = ev.getAge();
         int ageCatId = ev.getAgeCategory();
         String empCat = ev.getEmpCategory();
         boolean isUs = ev.isUsCitizen();
         String taxId = ev.getTaxId();
         String gender = ev.getGender();
 
-        AgeCategory ageCategory = null;
+        StatusCategory statusCategory = null;
         switch (ageCatId) {
             case 0:
-                ageCategory = AgeCategory.child;
+                statusCategory = StatusCategory.married;
                 break;
             case 1:
-                ageCategory = AgeCategory.adult;
+                statusCategory = StatusCategory.single;
                 break;
             case 2:
-                ageCategory = AgeCategory.senior;
+                statusCategory = StatusCategory.other;
                 break;
             default:
         }
@@ -70,7 +70,7 @@ public class Controller {
             genderCat = Gender.female;
         }
                 
-        Person person = new Person(name, occupation, ageCategory, empCategory, taxId, isUs, genderCat);
+        Person person = new Person(name, occupation, statusCategory, empCategory, taxId, isUs, genderCat);
 
         db.addPerson(person);
 

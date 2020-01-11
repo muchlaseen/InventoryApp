@@ -38,7 +38,7 @@ public class MainFrame extends JFrame {
     private TablePanel tablePanel;
 
     public MainFrame() {
-        super("Hello World!");
+        super("Employee App");
 
         // Set Layout of Main Frame
         setLayout(new BorderLayout());

@@ -17,22 +17,20 @@ public class Person implements Serializable {
     
     private int id;
     private String name;
-    private String occupation;
-    private AgeCategory ageCategory;
+    private String age;
+    private StatusCategory statusCategory;
     private EmploymentCategory empCategory;
     private String taxId;
-    private boolean usCitizen;
     private Gender gender;
 
-    public Person(String name, String occupation, AgeCategory ageCategory,
+    public Person(String name, String age, StatusCategory statusCategory,
             EmploymentCategory employmentCategory, String taxId,
             boolean usCitizen, Gender gender) {
         this.name = name;
-        this.occupation = occupation;
-        this.ageCategory = ageCategory;
+        this.age = age;
+        this.statusCategory = statusCategory;
         this.empCategory = employmentCategory;
         this.taxId = taxId;
-        this.usCitizen = usCitizen;
         this.gender = gender;
         
         this.id = count;
@@ -55,20 +53,20 @@ public class Person implements Serializable {
         this.name = name;
     }
 
-    public String getOccupation() {
-        return occupation;
+    public String getAge() {
+        return age;
     }
 
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public void setAge(String age) {
+        this.age = age;
     }
 
-    public AgeCategory getAgeCategory() {
-        return ageCategory;
+    public StatusCategory getStatusCategory() {
+        return statusCategory;
     }
 
-    public void setAgeCategory(AgeCategory ageCategory) {
-        this.ageCategory = ageCategory;
+    public void setStatusCategory(StatusCategory statusCategory) {
+        this.statusCategory = statusCategory;
     }
 
     public EmploymentCategory getEmpCategory() {
@@ -85,14 +83,6 @@ public class Person implements Serializable {
 
     public void setTaxId(String taxId) {
         this.taxId = taxId;
-    }
-
-    public boolean isUsCitizen() {
-        return usCitizen;
-    }
-
-    public void setUsCitizen(boolean usCitizen) {
-        this.usCitizen = usCitizen;
     }
 
     public Gender getGender() {

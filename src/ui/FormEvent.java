@@ -14,7 +14,7 @@ import java.util.EventObject;
 public class FormEvent extends EventObject {
 
     private String name;
-    private String occupation;
+    private String age;
     private int ageCategory;
     private String empCategory;
     private String taxId;
@@ -25,13 +25,13 @@ public class FormEvent extends EventObject {
         super(source);
     }
 
-    public FormEvent(Object source, String name, String occupation, int ageCat, String empCat,
+    public FormEvent(Object source, String name, String age, int ageCat, String empCat,
             String taxId, boolean usCitizen, String gender) {
         
         super(source);
 
         this.name = name;
-        this.occupation = occupation;
+        this.age = age;
         this.ageCategory = ageCat;
         this.empCategory = empCat;
         this.taxId = taxId;
@@ -60,12 +60,12 @@ public class FormEvent extends EventObject {
         this.name = name;
     }
 
-    public String getOccupation() {
-        return occupation;
+    public String getAge() {
+        return age;
     }
 
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public void setAge(String age) {
+        this.age = age;
     }
 
     public int getAgeCategory() {

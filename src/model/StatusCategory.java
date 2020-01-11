@@ -9,8 +9,8 @@ package model;
  *
  * @author muchlas
  */
-public enum AgeCategory {
-    child,
-    adult,
-    senior
+public enum StatusCategory {
+    married,
+    single,
+    other
 }
