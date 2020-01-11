@@ -13,7 +13,7 @@ import model.Database;
 import model.EmploymentCategory;
 import model.Gender;
 import model.Person;
-import view.FormEvent;
+import ui.FormEvent;
 
 /**
  *
